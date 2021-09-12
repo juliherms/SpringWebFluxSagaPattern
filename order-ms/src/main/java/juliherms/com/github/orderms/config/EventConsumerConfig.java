@@ -7,13 +7,19 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.function.Consumer;
 
+/**
+ * Class responsible to implements consumer for payments for order
+ */
 @Configuration
 public class EventConsumerConfig {
 
     @Autowired
     private OrderStatusUpdateHandler handler;
 
-
+    /**
+     * Method responsible to listen payment-event
+     * @return
+     */
     @Bean
     public Consumer<PaymentEvent> paymentEventConsumer(){
         //listen payment-event-topic

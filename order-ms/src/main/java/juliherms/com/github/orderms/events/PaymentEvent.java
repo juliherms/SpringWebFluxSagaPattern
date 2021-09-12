@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 import java.util.UUID;
 
+/**
+ * Class responsible to represents model for Payment Event
+ */
 @NoArgsConstructor
 @Data
 public class PaymentEvent implements Event{

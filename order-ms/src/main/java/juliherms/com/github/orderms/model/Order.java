@@ -9,6 +9,9 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.math.BigDecimal;
 
+/**
+ * Class responsible to represent Order in the system
+ */
 @Entity
 @Table(name = "TB_ORDER")
 @Data
@@ -19,11 +22,16 @@ public class Order {
     @Id
     @GeneratedValue
     private Long id;
+
     private Integer userId;
+
     private Integer productId;
+
     private BigDecimal price;
+
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
+
     @Enumerated(EnumType.STRING)
     private PaymentStatus paymentStatus;
 }

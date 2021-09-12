@@ -10,6 +10,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * Class responsible to represents business logic from Order
+ */
 @Service
 public class OrderService {
 
@@ -19,6 +22,11 @@ public class OrderService {
     @Autowired
     private OrderStatusPublisherService orderStatusPublisherService;
 
+    /**
+     * Responsible to create order
+     * @param orderRequestDto
+     * @return
+     */
     @Transactional
     public Order createOrder(OrderRequestDTO orderRequestDto) {
 
@@ -30,10 +38,19 @@ public class OrderService {
         return order;
     }
 
+    /**
+     * Responsible to list all orders
+     * @return
+     */
     public List<Order> getAllOrders(){
         return repo.findAll();
     }
 
+    /**
+     * Responsible to convert DTO to Entity
+     * @param dto
+     * @return
+     */
     private Order convertDtoToEntity(OrderRequestDTO dto) {
         Order order = new Order();
         order.setProductId(dto.getProductId());

@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
+/**
+ * Class responsible to represent OrderRequest
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

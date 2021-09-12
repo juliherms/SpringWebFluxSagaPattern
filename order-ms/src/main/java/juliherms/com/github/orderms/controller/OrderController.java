@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * Class responsible to provide orders endpoint
+ */
 @RestController
 @RequestMapping("/orders")
 public class OrderController {
@@ -17,12 +20,20 @@ public class OrderController {
     @Autowired
     private OrderService service;
 
-
+    /**
+     * Method responsible to create order
+     * @param orderRequestDTO
+     * @return
+     */
     @PostMapping("/create")
     public Order createOrder(@RequestBody OrderRequestDTO orderRequestDTO){
         return service.createOrder(orderRequestDTO);
     }
 
+    /**
+     * Method responsible to list orders
+     * @return
+     */
     @GetMapping
     public List<Order> getOrders(){
         return service.getAllOrders();

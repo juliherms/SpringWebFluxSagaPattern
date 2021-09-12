@@ -12,6 +12,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.function.Consumer;
 
+/**
+ * Class responsible to handler order status
+ */
 @Configuration
 public class OrderStatusUpdateHandler {
 
@@ -26,6 +29,10 @@ public class OrderStatusUpdateHandler {
         repository.findById(id).ifPresent(consumer.andThen(this::updateOrder));
     }
 
+    /**
+     * Method responsible to update order and emitter event to broker
+     * @param order
+     */
     private void updateOrder(Order order) {
 
         boolean isPaymentComplete = PaymentStatus.COMPLETED.equals(order.getPaymentStatus());

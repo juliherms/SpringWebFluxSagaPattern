@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 import java.util.UUID;
 
+/**
+ *  Class responsible to represents model for Order Event
+ */
 @NoArgsConstructor
 @Data
 public class OrderEvent implements Event {

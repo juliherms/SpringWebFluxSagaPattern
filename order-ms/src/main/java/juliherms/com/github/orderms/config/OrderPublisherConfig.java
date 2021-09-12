@@ -8,6 +8,9 @@ import reactor.core.publisher.Sinks;
 
 import java.util.function.Supplier;
 
+/**
+ * Class responsible to configure order publisher event to broker
+ */
 @Configuration
 public class OrderPublisherConfig {
 
